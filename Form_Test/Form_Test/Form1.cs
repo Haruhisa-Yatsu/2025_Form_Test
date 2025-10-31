@@ -21,31 +21,12 @@ namespace Form_Test
                 for (int j = 0; j < 4; j++)
                 {
                     // インスタンスの生成
-                    TestButton testButton = new TestButton();
-
-                    // ボタンの位置を設定
-                    testButton.Location = new Point(50 * i, 50 * j);
-
-                    // ボタンの大きさを設定
-                    testButton.Size = new Size(50, 50);
-
-                    // ボタン内のテキストを設定
-                    testButton.Text = "";
-
-                    // Click Eventに　hogehogeClick関数を登録
-                    testButton.Click += hogehogeClick;
-
+                    TestButton testButton = new TestButton(new Point(50 * i, 50 * j), new Size(50, 50), "あ");
 
                     // コントロールにボタンを追加
                     Controls.Add(testButton);
                 }
             }
-        }
-
-        // 自分で作成することも可能
-        private void hogehogeClick(object sender, EventArgs e)
-        {
-            MessageBox.Show("くりっくされてしまいました");
         }
 
         // 自動生成
