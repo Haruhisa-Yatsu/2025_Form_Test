@@ -16,9 +16,9 @@ namespace Form_Test
         {
             InitializeComponent();
 
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 3; i++)
             {
-                for (int j = 0; j < 4; j++)
+                for (int j = 0; j < 3; j++)
                 {
                     // インスタンスの生成
                     TestButton testButton = new TestButton(new Point(50 * i, 50 * j), new Size(50, 50), "あ");
