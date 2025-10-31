@@ -50,11 +50,9 @@ namespace Form_Test
             Click += ClickEvent;
         }
 
-
         // 自分で作成することも可能
         private void ClickEvent(object sender, EventArgs e)
         {
-
             SetEnable(!_enable);
         }   
     }
