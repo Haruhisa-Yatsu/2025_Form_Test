@@ -23,7 +23,6 @@ namespace Form_Test
         /// </summary>
         const int BUTTON_SIZE_Y = 100;
 
-
         /// <summary>
         /// ボタンが横に何個並ぶか
         /// </summary>
@@ -33,13 +32,15 @@ namespace Form_Test
         /// </summary>
         const int BOARD_SIZE_Y = 3;
 
+        /// <summary>
+        /// TestButtonの二次元配列
+        /// </summary>
         private TestButton[,] _buttonArray;
-
-
+        
         public Form1()
         {
             InitializeComponent();
-
+            
             //_buttonArrayの初期化
             _buttonArray = new TestButton[BOARD_SIZE_Y, BOARD_SIZE_X];
 
@@ -49,8 +50,11 @@ namespace Form_Test
                 {
                     // インスタンスの生成
                     TestButton testButton =
-                        new TestButton(new Point(BUTTON_SIZE_X * i, BUTTON_SIZE_Y * j)
-                                     , new Size(BUTTON_SIZE_X, BUTTON_SIZE_Y), "");
+                        new TestButton(
+                            this,
+                            new Point(BUTTON_SIZE_X * i, BUTTON_SIZE_Y * j),
+                            new Size(BUTTON_SIZE_X, BUTTON_SIZE_Y),
+                            "");
 
                     // 配列にボタンの参照を追加
                     _buttonArray[j, i] = testButton;
@@ -59,8 +63,11 @@ namespace Form_Test
                     Controls.Add(testButton);
                 }
             }
+        }
 
-            _buttonArray[1, 0].SetEnable(true);
+        public TestButton GetTestButton(int x, int y)
+        {
+            return _buttonArray[y, x];
         }
 
         // 自動生成
