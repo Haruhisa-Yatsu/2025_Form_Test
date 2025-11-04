@@ -52,7 +52,7 @@ namespace Form_Test
                     TestButton testButton =
                         new TestButton(
                             this,
-                            new Point(BUTTON_SIZE_X * i, BUTTON_SIZE_Y * j),
+                            i, j,
                             new Size(BUTTON_SIZE_X, BUTTON_SIZE_Y),
                             "");
 
